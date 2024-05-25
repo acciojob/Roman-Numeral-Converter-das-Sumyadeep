@@ -11,22 +11,20 @@ function convertToRoman(num) {
 
   //your code here
 
-	let numerical = "";
+	let str = "";
 
-	for(let val in obj){
-
-		while(num >= obj[val][1]){
-			numerical += obj[val][0];
-			num -= obj[val][1];
+		for (let i in obj) {
+			let q = Math.floor(num / obj[i][1]);
+		    num -= q * obj[i][1];
+		    str += i.repeat(q)
 		}
-	}
 
-	return numerical;
+	return str;
 
 }
 // You can test your code by running the above function and printing it to console by pressing the run button at the top. To run it with input 36, uncomment the following line
 
-console.log(convertToRoman(36));
+// console.log(convertToRoman(36));
 
 
 // do not edit below this line
